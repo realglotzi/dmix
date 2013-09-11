@@ -5,14 +5,20 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class NetworkHelper {
-
+	
 	public static boolean isNetworkConnected(Context context) {
-		ConnectivityManager cm = (ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (cm.getActiveNetworkInfo() == null)
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		
+		NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+		
+		if (networkInfo == null)
 			return false;
-		return (cm.getActiveNetworkInfo().isAvailable() && cm
-				.getActiveNetworkInfo().isConnected());
+		else if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI && networkInfo.isAvailable() && networkInfo.isConnected())
+			return true;
+		else if (networkInfo.isConnected())
+			return true;
+		
+		return false;
 	}
 
 	public static Boolean isLocalNetworkConnected(Context context) {
