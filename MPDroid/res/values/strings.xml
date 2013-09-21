@@ -224,5 +224,9 @@
     <string name="sharePrefix">Now Playing :</string>
     <string name="enableTabletUI">Use tablet UI</string>
     <string name="enableTabletUIDescription">Restart the application to see the changes</string>
+    
+	<string name="generalSettings">General settings</string>    
+    <string name="runOnBoot">Autostart</string>
+    <string name="runOnBootDescription">Start application on boot</string>
 
 </resources>

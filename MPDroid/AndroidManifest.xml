@@ -10,6 +10,7 @@
 	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
 	<!-- Cover art cache -->
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="18" />
 	
@@ -88,6 +89,14 @@
 			</intent-filter>
 			<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_provider_simple"></meta-data>
 		</receiver>
+		
+		<receiver android:enabled="true" android:name=".BootUpReceiver" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+	        <intent-filter>
+	                <action android:name="android.intent.action.BOOT_COMPLETED" />
+	                <category android:name="android.intent.category.DEFAULT" />
+	        </intent-filter>
+		</receiver>
+				
 		<service android:name=".widgets.WidgetHelperService" android:enabled="true"></service>
 	</application>
 

@@ -212,5 +212,8 @@
 	<string name="enableLightNowPlayingThemeDescription">Starte die App neu um Änderung anzuwenden</string>
 	<string name="share">Weiterleiten</string>
 	<string name="sharePrefix">Wird abgespielt :</string>
-
+	
+	<string name="generalSettings">Allgemeine Einstellungen</string>    
+    <string name="runOnBoot">Autostart</string>
+    <string name="runOnBootDescription">Automatisch beim System-Boot starten</string>
 </resources>

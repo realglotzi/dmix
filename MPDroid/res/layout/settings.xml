@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	android:key="preferencescreen">
-	<PreferenceCategory android:title="@string/serverSettings">
+	
+ 	<PreferenceCategory android:title="@string/generalSettings">
+		<CheckBoxPreference android:persistent="true"
+			android:title="@string/runOnBoot"
+			android:key="runOnBoot" android:defaultValue="false"
+			android:summary="@string/runOnBootDescription" />
+	</PreferenceCategory>    
+
+ 		<PreferenceCategory android:title="@string/serverSettings">
 		<!-- Connection Settings -->
 		<PreferenceScreen android:title="@string/connectionSettings"
 			android:summary="@string/connectionSettingsDescription" android:key="connectionScreen">
@@ -128,9 +136,12 @@
 		<CheckBoxPreference android:persistent="true"
 			android:title="@string/playOnPhoneStateChange"
 			android:key="playOnPhoneStateChange" android:defaultValue="false"
-			android:summary="@string/playOnPhoneStateChangeDescription" 
-			/>
-		
+			android:summary="@string/playOnPhoneStateChangeDescription" />
+		<CheckBoxPreference android:persistent="true"
+			android:title="@string/runOnBoot"
+			android:key="runOnBoot" android:defaultValue="false"
+			android:summary="@string/runOnBootDescription" />
+				
 		
 	</PreferenceCategory>
 	<!-- What's new -->
